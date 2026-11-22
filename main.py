@@ -8,6 +8,9 @@ from kivy.uix.popup import Popup
 from kivy.uix.spinner import Spinner
 import os, base64, hashlib
 
+# Android Permission အတွက် ထည့်ထားတာပါ
+from android.permissions import request_permissions, Permission
+
 HEADER = b"=== LOCKED BY FILE-HIDER ===\n"
 
 def get_key(p):
@@ -43,6 +46,9 @@ def walk_files(folder):
 
 class FileLockerApp(App):
     def build(self):
+        # App စဖွင့်တာနဲ့ Storage ခွင့်ပြုချက် တောင်းခိုင်းတာပါ
+        request_permissions([Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL_STORAGE])
+
         self.selected_path = ""
         self.is_folder = False
         root = BoxLayout(orientation="vertical", padding=20, spacing=10)
