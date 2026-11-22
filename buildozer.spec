@@ -10,8 +10,8 @@ orientation = portrait
 fullscreen = 0
 
 android.permissions = READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE,MANAGE_EXTERNAL_STORAGE
-android.api = 33
-android.minapi = 24
+android.api = 31
+android.minapi = 21
 android.archs = arm64-v8a,armeabi-v7a
 android.allow_backup = True
 
